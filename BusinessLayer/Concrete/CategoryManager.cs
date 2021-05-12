@@ -21,5 +21,10 @@ namespace BusinessLayer.Concrete
         {
             return _categoryDal.List();
         }
+
+        public void Add(Category p)
+        {
+            _categoryDal.Insert(p);
+        }
     }
 }
