@@ -1,7 +1,10 @@
 ﻿using System.Web.Mvc;
 using BusinessLayer.Concrete;
+using BusinessLayer.ValidationRules;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
+using FluentValidation;
+using FluentValidation.Results;
 
 namespace MvcProjeKampi.Controllers
 {
@@ -23,14 +26,29 @@ namespace MvcProjeKampi.Controllers
         [HttpGet]
         public ActionResult AddCategory()
         {
-            return View() ;
+            return View();
         }
 
         [HttpPost]
         public ActionResult AddCategory(Category p)
         {
-            cm.Add(p);
-            return RedirectToAction("GetCategoryList");
+            CategoryValidator categoryValidator = new CategoryValidator();
+            ValidationResult result = categoryValidator.Validate(p);
+
+            if (result.IsValid)
+            {
+                cm.CategoryAdd(p);
+                return RedirectToAction("GetCategoryList");
+            }
+            else
+            {
+                foreach (var item in result.Errors)
+                {
+                    ModelState.AddModelError(item.PropertyName,item.ErrorMessage);
+                }
+            }
+
+            return View();
         }
     }
 }
