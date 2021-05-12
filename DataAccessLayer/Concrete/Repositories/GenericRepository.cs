@@ -28,6 +28,7 @@ namespace DataAccessLayer.Concrete.Repositories
         public void Insert(T p)
         {
             _object.Add(p);
+            c.SaveChanges();
         }
 
         public void Update(T p)
