@@ -10,16 +10,21 @@ using EntityLayer.Concrete;
 
 namespace DataAccessLayer.Concrete.Repositories
 {
-  public   class WriterRepository:IWriterDal
-  {
-      private Context c = new Context();
-      private DbSet<Writer> _object;
+    public class WriterRepository : IWriterDal
+    {
+        private Context c = new Context();
+        private DbSet<Writer> _object;
         public List<Writer> List()
         {
             throw new NotImplementedException();
         }
 
         public void Insert(Writer p)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Writer Get(Expression<Func<Writer, bool>> filter)
         {
             throw new NotImplementedException();
         }
