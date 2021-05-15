@@ -3,7 +3,23 @@
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
-}
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Yazar Adı</th>
+        <th>Yazar Soyadı</th>
+        <th>Mail</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.WriterID</td>
+            <td>@item.WriterName</td>
+            <td>@item.WriterSurname</td>
+            <td>@item.WriterMail</td>
+        </tr>
+    }
+</table>
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <div class="container-fluid">
