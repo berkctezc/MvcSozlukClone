@@ -4,5 +4,8 @@ using EntityLayer.Concrete;
 
 namespace DataAccessLayer.EntityFramework
 {
-    public class EfWriterDal:GenericRepository<Writer>,IWriterDal { }
+    public class EfWriterDal : GenericRepository<Writer>, IWriterDal
+    {
+
+    }
 }
