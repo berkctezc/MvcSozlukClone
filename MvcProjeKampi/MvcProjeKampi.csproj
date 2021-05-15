@@ -133,13 +133,13 @@
     <Compile Include="Controllers\AdminCategoryController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\StatisticsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="AdminLTE-3.0.4\.gitignore" />
     <Content Include="AdminLTE-3.0.4\build\config\postcss.config.js" />
     <Content Include="AdminLTE-3.0.4\build\config\rollup.config.js" />
     <Content Include="AdminLTE-3.0.4\build\js\AdminLTE.js" />
@@ -2005,13 +2005,6 @@
     <Content Include="Content\bootstrap-reboot.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
-    <Content Include="AdminLTE-3.0.4\.babelrc" />
-    <Content Include="AdminLTE-3.0.4\.browserslistrc" />
-    <Content Include="AdminLTE-3.0.4\.editorconfig" />
-    <Content Include="AdminLTE-3.0.4\.eslintignore" />
-    <Content Include="AdminLTE-3.0.4\.eslintrc" />
-    <Content Include="AdminLTE-3.0.4\.npmignore" />
-    <Content Include="AdminLTE-3.0.4\.travis.yml" />
     <Content Include="AdminLTE-3.0.4\build\js\.jscsrc" />
     <Content Include="AdminLTE-3.0.4\build\scss\.csslintrc" />
     <Content Include="AdminLTE-3.0.4\build\scss\AdminLTE-components.scss" />
@@ -2089,7 +2082,6 @@
     <Content Include="AdminLTE-3.0.4\build\scss\_toasts.scss" />
     <Content Include="AdminLTE-3.0.4\build\scss\_users-list.scss" />
     <Content Include="AdminLTE-3.0.4\build\scss\_variables.scss" />
-    <Content Include="AdminLTE-3.0.4\composer.json" />
     <Content Include="AdminLTE-3.0.4\dist\css\adminlte.css.map" />
     <Content Include="AdminLTE-3.0.4\dist\css\adminlte.min.css.map" />
     <Content Include="AdminLTE-3.0.4\dist\css\alt\adminlte.components.css.map" />
@@ -2180,9 +2172,6 @@
     <Content Include="AdminLTE-3.0.4\docs\license.md" />
     <Content Include="AdminLTE-3.0.4\docs\upgrade-guide.md" />
     <Content Include="AdminLTE-3.0.4\docs\_config.yml" />
-    <Content Include="AdminLTE-3.0.4\LICENSE" />
-    <Content Include="AdminLTE-3.0.4\package-lock.json" />
-    <Content Include="AdminLTE-3.0.4\package.json" />
     <Content Include="AdminLTE-3.0.4\plugins\.npmignore" />
     <Content Include="AdminLTE-3.0.4\plugins\bootstrap-colorpicker\css\bootstrap-colorpicker.css.map" />
     <Content Include="AdminLTE-3.0.4\plugins\bootstrap-colorpicker\css\bootstrap-colorpicker.min.css.map" />
@@ -2256,7 +2245,6 @@
     <Content Include="AdminLTE-3.0.4\plugins\summernote\summernote.min.js.map" />
     <Content Include="AdminLTE-3.0.4\plugins\sweetalert2-theme-bootstrap-4\bootstrap-4.scss" />
     <Content Include="AdminLTE-3.0.4\plugins\toastr\toastr.js.map" />
-    <Content Include="AdminLTE-3.0.4\README.md" />
     <None Include="Scripts\jquery-3.6.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.6.0.js" />
     <Content Include="Scripts\jquery-3.6.0.min.js" />
@@ -2370,6 +2358,8 @@
     <Content Include="Views\Shared\_AdminLayout.cshtml" />
     <Content Include="Views\AdminCategory\Index.cshtml" />
     <Content Include="Views\AdminCategory\AddCategory.cshtml" />
+    <Content Include="Views\AdminCategory\EditCategory.cshtml" />
+    <Content Include="Views\Statistics\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,82 @@
+﻿@using DataAccessLayer.Concrete
+@{
+    ViewBag.Title = "Sözlük İstatistikleri";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="container">
+    <h2>Sözlük İstatistikleri</h2>
+    <div class="row text-center">
+        <div class="card text-white bg-primary mb-3" style="margin:4px">
+            <div class="card-body">
+                <h5 class="card-title">Kategori Sayısı</h5>
+                <p class="card-text h1">
+                    @{
+                        Context context = new Context();
+                        var countCategories = (context.Categories.Count());
+                    }
+                    @countCategories
+                </p>
+            </div>
+        </div>
+        <div class="card text-white bg-info mb-3" style="max-width: 18rem; margin: 4px">
+            <div class="card-body">
+                <h5 class="card-title">Dizi kategorisine ait başlık sayısı</h5>
+                <p class="card-text h1">
+                    @{
+                        var countTVSeries = (context.Headings.Where(x => x.CategoryID == 6).Count());
+                    }
+                    @countTVSeries
+                </p>
+            </div>
+        </div>
+        <div class="card text-white bg-success mb-3" style="max-width: 18rem; margin:4px">
+            <div class="card-body">
+                <h5 class="card-title">Yazar adında 'a' harfi geçen yazar sayısı</h5>
+                <p class="card-text h1">
+                    @{
+                        var countWritersContainsLetterA = (context.Writers.Where(x => x.WriterName.ToLower().Contains("a")).Count());
+                    }
+                    @countWritersContainsLetterA
+                </p>
+            </div>
+        </div>
+        <div class="card text-white bg-danger mb-3" style="max-width: 18rem; margin: 4px">
+            <div class="card-body">
+                <h5 class="card-title">En fazla başlığa sahip kategori adı</h5>
+                <p class="card-text h1">
+                    @{
+                        var countCategoryWithMostHeadingsID = context.Headings
+                            .GroupBy(x => x.CategoryID)
+                            .OrderByDescending(x => x.Count())
+                            .Select(x=>x.Key)
+                            .ToList()[0];
+
+                        var countCategoryWithMostHeadings = context.Categories
+                            .Where(x => x.CategoryId == countCategoryWithMostHeadingsID)
+                            .Select(x=>x.CategoryName)
+                            .ToList()[0];
+
+               //select top 1 CategoryID from Headings group by CategoryID order by count(CategoryID) desc
+                    }
+                    @countCategoryWithMostHeadings
+                </p>
+            </div>
+        </div>
+        <div class="card text-dark bg-warning mb-3" style="max-width: 18rem; margin: 4px">
+            <div class="card-body">
+                <h5 class="card-title">Kategori tablosunda durumu true olan kategoriler ile false olan kategoriler arasındaki sayısal fark</h5>
+                <p class="card-text h1">
+                    @{
+                        var countofTrueCategories = context.Categories
+                            .Where(x => x.CategoryStatus == true).Count();
+                        var countofFalseCategories = context.Categories
+                            .Where(x => x.CategoryStatus == false).Count();
+
+                        var compareTrueAndFalseCategories = Math.Abs(countofFalseCategories - countofTrueCategories);
+                    }
+                    @compareTrueAndFalseCategories
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
