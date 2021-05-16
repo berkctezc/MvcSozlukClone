@@ -3,7 +3,6 @@ using BusinessLayer.Concrete;
 using BusinessLayer.ValidationRules;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
-using FluentValidation;
 using FluentValidation.Results;
 
 namespace MvcProjeKampi.Controllers
