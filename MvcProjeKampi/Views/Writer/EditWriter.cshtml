@@ -18,7 +18,11 @@
         <br />
         @Html.Label("Yazar Soyadı")
         @Html.TextBoxFor(x => x.WriterSurname, new { @class = "form-control" })
-        @Html.ValidationMessageFor(x => x.WriterSurname)
+        @Html.ValidationMessageFor(x => x.WriterSurname)     
+        <br />
+        @Html.Label("Yazar Ünvanı")
+        @Html.TextBoxFor(x => x.WriterTitle, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.WriterTitle)
         <br />
         @Html.Label("Yazar Mail")
         @Html.TextBoxFor(x => x.WriterMail, new { @class = "form-control" })
