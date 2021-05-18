@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     Layout = null;
     ViewBag.Title = "Sozluk";
 }
@@ -9,14 +8,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="~/AdminLTE-3.0.4/plugins/fontawesome-free/css/all.min.css">
-    <!-- IonIcons -->
     <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-    <!-- Theme style -->
     <link rel="stylesheet" href="~/AdminLTE-3.0.4/dist/css/adminlte.min.css">
-    <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <style>
+        .field-validation-error {
+            color: rgb(255,0,0);
+        }
+    </style>
 </head>
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
@@ -42,24 +42,28 @@
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                        <!-- Add icons to the links using the .nav-icon class
-                             with font-awesome or any other icon font library -->
                         <li class="nav-item has-treeview menu-open">
-                            <a href="#" class="nav-link">
+                            <a href="/AdminCategory/Index" class="nav-link">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>Kategoriler</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/widgets.html" class="nav-link">
+                            <a href="/Headings/Index" class="nav-link">
                                 <i class="nav-icon fas fa-th"></i>
                                 <p>Başlıklar</p>
                             </a>
                         </li>
                         <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link">
+                            <a href="/Writer/Index" class="nav-link">
                                 <i class="nav-icon fas fa-copy"></i>
                                 <p>Yazarlar</p>
+                            </a>
+                        </li>    
+                        <li class="nav-item has-treeview">
+                            <a href="/Statistics/Index" class="nav-link">
+                                <i class="nav-icon fas fa-chart-bar"></i>
+                                <p>İstatistikler</p>
                             </a>
                         </li>
                         <li class="nav-item has-treeview">
@@ -89,7 +93,7 @@
                             </ul>
                         </li>
                         <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link">
+                            <a href="/About/Index" class="nav-link">
                                 <i class="nav-icon fas fa-tree"></i>
                                 <p>Hakkımızda</p>
                             </a>
@@ -101,7 +105,7 @@
                             </a>
                         </li>
                         <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link">
+                            <a href="/Entries/Index" class="nav-link">
                                 <i class="nav-icon fas fa-table"></i>
                                 <p>Yazılar</p>
                             </a>
@@ -125,7 +129,7 @@
                             </a>
                         </li>
                         <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link">
+                            <a href="/home/index" class="nav-link">
                                 <i class="nav-icon fas fa-book"></i>
                                 <p>Siteye Dön</p>
                             </a>
