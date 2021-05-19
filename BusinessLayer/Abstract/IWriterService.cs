@@ -10,6 +10,5 @@ namespace BusinessLayer.Abstract
         void WriterAdd(Writer writer);
         void WriterDelete(Writer writer);
         void WriterUpdate(Writer writer);
-
     }
 }

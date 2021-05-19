@@ -41,7 +41,7 @@ namespace DataAccessLayer.Concrete.Repositories
 
         public List<Category> List(Expression<Func<Category, bool>> filter)
         {
-            throw new NotImplementedException();
+            return _object.Where(filter).ToList();
         }
     }
 }
