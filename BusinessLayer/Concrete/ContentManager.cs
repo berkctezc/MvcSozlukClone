@@ -19,9 +19,9 @@ namespace BusinessLayer.Concrete
             return _contentDal.List();
         }
 
-        public List<Content> GetList(int id)
+        public List<Content> GetListByHeadingID(int id)
         {
-            return _contentDal.List(x=>x.ContentID==id);
+            return _contentDal.List(x=>x.HeadingID==id);
         }
 
         public void ContentAdd(Content content)
