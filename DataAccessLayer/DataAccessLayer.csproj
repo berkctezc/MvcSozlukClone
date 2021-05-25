@@ -83,6 +83,14 @@
     <Compile Include="Migrations\202105251650107_increasedImageLength.designer.cs">
       <DependentUpon>202105251650107_increasedImageLength.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202105251935028_contentStatusAdded.cs" />
+    <Compile Include="Migrations\202105251935028_contentStatusAdded.designer.cs">
+      <DependentUpon>202105251935028_contentStatusAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105251937423_headingStatusAdded.cs" />
+    <Compile Include="Migrations\202105251937423_headingStatusAdded.designer.cs">
+      <DependentUpon>202105251937423_headingStatusAdded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -108,6 +116,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202105251650107_increasedImageLength.resx">
       <DependentUpon>202105251650107_increasedImageLength.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105251935028_contentStatusAdded.resx">
+      <DependentUpon>202105251935028_contentStatusAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105251937423_headingStatusAdded.resx">
+      <DependentUpon>202105251937423_headingStatusAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
