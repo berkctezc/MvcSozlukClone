@@ -55,10 +55,29 @@ namespace MvcProjeKampi.Controllers
                                                       Text = x.CategoryName,
                                                       Value = x.CategoryId.ToString()
                                                   }).ToList();
+            List<SelectListItem> valueWriter = (from x in wm.GetList()
+                                                select new SelectListItem
+                                                {
+                                                    Text = x.WriterName + " " + x.WriterSurname,
+                                                    Value = x.WriterID.ToString()
+                                                }).ToList();
+
+            ViewBag.vlw = valueWriter;
             ViewBag.vlc = valueCategory;
             var headingToEdit = hm.GetByID(id);
             return View(headingToEdit);
         }
-
+        [HttpPost]
+        public ActionResult EditHeading(Heading p)
+        {
+            hm.HeadingUpdate(p);
+            return RedirectToAction("Index");
+        }
+        public ActionResult DeleteHeading(int id)
+        {
+            var headingToDelete = hm.GetByID(id);
+            hm.HeadingDelete(headingToDelete);
+            return RedirectToAction("Index");
+        }
     }
 }
