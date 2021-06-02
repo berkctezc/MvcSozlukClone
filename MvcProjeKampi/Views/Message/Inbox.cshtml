@@ -1,25 +1,23 @@
 ﻿@using EntityLayer.Concrete
-@model List<Contact>
+@model List<Message>
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Inbox";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
-
 <!DOCTYPE html>
-<html>
 <body class="hold-transition sidebar-mini">
     <section class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Mesaj Kutusu</h1>
+                    <h1>Kişisel Mesaj Kutusu</h1>
                 </div>
             </div>
         </div>
     </section>
     <section class="content">
         <div class="row">
-            @Html.Action("MessageListMenu","Contact")
+            @Html.Action("MessageListMenu", "Contact")
             <div class="col-md-9">
                 <div class="card card-primary card-outline">
                     <div class="card-header">
@@ -57,35 +55,35 @@
                         <div class="table-responsive mailbox-messages">
                             <table class="table table-hover table-striped">
                                 <tbody>
-                                @foreach (var item in Model)
-                                {
-                                    <tr>
-                                        <td>
-                                            <div class="icheck-primary">
-                                                <input type="checkbox" value="" id="check1">
-                                                <label for="check1"></label>
-                                            </div>
-                                        </td>
-                                        <td class="mailbox-star"><a href="/Contact/GetContactDetails/@item.ContactID"><i class="fas fa-star text-warning"></i></a></td>
-                                        <td class="mailbox-name"><a href="/Contact/GetContactDetails/@item.ContactID">@item.UserName</a></td>
-                                        <td class="mailbox-subject">
-                                            <b>@item.Subject</b> -
-                                            @{
-                                                if (item.Message.Length < 30)
-                                                {
-                                                    @item.Message
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>
+                                                <div class="icheck-primary">
+                                                    <input type="checkbox" value="" id="check1">
+                                                    <label for="check1"></label>
+                                                </div>
+                                            </td>
+                                            <td class="mailbox-star"><a href="/Contact/GetContactDetails/@item.MessageID"><i class="fas fa-star text-warning"></i></a></td>
+                                            <td class="mailbox-name"><a href="/Contact/GetContactDetails/@item.MessageID">@item.SenderMail</a></td>
+                                            <td class="mailbox-subject">
+                                                <b>@item.Subject</b> -
+                                                @{
+                                                    if (item.MessageContent.Length < 30)
+                                                    {
+                                                        @item.MessageContent
+                                                    }
+                                                    else
+                                                    {
+                                                        @item.MessageContent.Substring(0, 30)
+                                                    }
                                                 }
-                                                else
-                                                {
-                                                    @item.Message.Substring(0, 30)
-                                                }
-                                            }
-                                            ...
-                                        </td>
-                                        <td class="mailbox-attachment"></td>
-                                        <td class="mailbox-date">5 mins ago</td>
-                                    </tr>
-                                }
+                                                ...
+                                            </td>
+                                            <td class="mailbox-attachment"></td>
+                                            <td class="mailbox-date">5 mins ago</td>
+                                        </tr>
+                                    }
                                 </tbody>
                             </table>
                         </div>
@@ -115,4 +113,3 @@
         </div>
     </section>
 </body>
-</html>
