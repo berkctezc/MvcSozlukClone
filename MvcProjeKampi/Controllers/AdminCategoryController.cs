@@ -1,9 +1,9 @@
-﻿using System.Web.Mvc;
-using BusinessLayer.Concrete;
+﻿using BusinessLayer.Concrete;
 using BusinessLayer.ValidationRules;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using FluentValidation.Results;
+using System.Web.Mvc;
 
 namespace MvcProjeKampi.Controllers
 {
@@ -37,10 +37,10 @@ namespace MvcProjeKampi.Controllers
             {
                 foreach (var item in results.Errors)
                 {
-                    ModelState.AddModelError(item.PropertyName,item.ErrorMessage);
+                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
                 }
             }
-            
+
             return View();
         }
 

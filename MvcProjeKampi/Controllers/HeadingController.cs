@@ -1,10 +1,10 @@
-﻿using System;
+﻿using BusinessLayer.Concrete;
+using DataAccessLayer.EntityFramework;
+using EntityLayer.Concrete;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using BusinessLayer.Concrete;
-using DataAccessLayer.EntityFramework;
 using System.Web.Mvc;
-using EntityLayer.Concrete;
 
 namespace MvcProjeKampi.Controllers
 {
@@ -13,6 +13,7 @@ namespace MvcProjeKampi.Controllers
         private HeadingManager hm = new HeadingManager(new EfHeadingDal());
         private CategoryManager cm = new CategoryManager(new EfCategoryDal());
         private WriterManager wm = new WriterManager(new EfWriterDal());
+
         public ActionResult Index()
         {
             var headingValues = hm.GetList();
@@ -46,6 +47,7 @@ namespace MvcProjeKampi.Controllers
             hm.HeadingAdd(p);
             return RedirectToAction("Index");
         }
+
         [HttpGet]
         public ActionResult EditHeading(int id)
         {
@@ -67,12 +69,14 @@ namespace MvcProjeKampi.Controllers
             var headingToEdit = hm.GetByID(id);
             return View(headingToEdit);
         }
+
         [HttpPost]
         public ActionResult EditHeading(Heading p)
         {
             hm.HeadingUpdate(p);
             return RedirectToAction("Index");
         }
+
         public ActionResult DeleteHeading(int id)
         {
             var headingToDelete = hm.GetByID(id);

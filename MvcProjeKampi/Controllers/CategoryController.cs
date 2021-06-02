@@ -1,16 +1,17 @@
-﻿using System.Web.Mvc;
-using BusinessLayer.Concrete;
+﻿using BusinessLayer.Concrete;
 using BusinessLayer.ValidationRules;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using FluentValidation.Results;
+using System.Web.Mvc;
 
 namespace MvcProjeKampi.Controllers
 {
     public class CategoryController : Controller
     {
         // GET: Category
-        CategoryManager cm = new CategoryManager(new EfCategoryDal());
+        private CategoryManager cm = new CategoryManager(new EfCategoryDal());
+
         public ActionResult Index()
         {
             return View();
@@ -43,7 +44,7 @@ namespace MvcProjeKampi.Controllers
             {
                 foreach (var item in result.Errors)
                 {
-                    ModelState.AddModelError(item.PropertyName,item.ErrorMessage);
+                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
                 }
             }
 

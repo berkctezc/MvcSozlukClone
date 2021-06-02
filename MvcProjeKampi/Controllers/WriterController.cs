@@ -1,16 +1,16 @@
-﻿using System.Web.Mvc;
-using BusinessLayer.Concrete;
+﻿using BusinessLayer.Concrete;
 using BusinessLayer.ValidationRules;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using FluentValidation.Results;
+using System.Web.Mvc;
 
 namespace MvcProjeKampi.Controllers
 {
     public class WriterController : Controller
     {
         private WriterManager wm = new WriterManager(new EfWriterDal());
-        WriterValidator writerValidator = new WriterValidator();
+        private WriterValidator writerValidator = new WriterValidator();
 
         public ActionResult Index()
         {
@@ -23,6 +23,7 @@ namespace MvcProjeKampi.Controllers
         {
             return View();
         }
+
         [HttpPost]
         public ActionResult AddWriter(Writer p)
         {
