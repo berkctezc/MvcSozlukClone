@@ -4,5 +4,5 @@ using EntityLayer.Concrete;
 
 namespace DataAccessLayer.EntityFramework
 {
-    public class EfHeadingDal:GenericRepository<Heading>,IHeadingDal { }
+    public class EfHeadingDal : GenericRepository<Heading>, IHeadingDal { }
 }

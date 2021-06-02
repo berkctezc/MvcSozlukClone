@@ -1,17 +1,18 @@
-﻿using System;
+﻿using DataAccessLayer.Abstract;
+using EntityLayer.Concrete;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
-using DataAccessLayer.Abstract;
-using EntityLayer.Concrete;
 
 namespace DataAccessLayer.Concrete.Repositories
 {
     public class CategoryRepository : ICategoryDal
     {
-        Context c = new Context();
-        DbSet<Category> _object;
+        private Context c = new Context();
+        private DbSet<Category> _object;
+
         public List<Category> List()
         {
             return _object.ToList();

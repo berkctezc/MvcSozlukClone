@@ -1,9 +1,9 @@
-﻿using System;
+﻿using DataAccessLayer.Abstract;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
-using DataAccessLayer.Abstract;
 
 namespace DataAccessLayer.Concrete.Repositories
 {
@@ -20,7 +20,6 @@ namespace DataAccessLayer.Concrete.Repositories
         public List<T> List()
         {
             return _object.ToList();
-
         }
 
         public void Insert(T p)

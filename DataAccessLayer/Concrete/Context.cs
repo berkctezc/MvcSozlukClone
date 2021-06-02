@@ -1,5 +1,5 @@
-﻿using System.Data.Entity;
-using EntityLayer.Concrete;
+﻿using EntityLayer.Concrete;
+using System.Data.Entity;
 
 namespace DataAccessLayer.Concrete
 {
@@ -14,6 +14,5 @@ namespace DataAccessLayer.Concrete
         public DbSet<Content> Contents { get; set; }
         public DbSet<Heading> Headings { get; set; }
         public DbSet<Writer> Writers { get; set; }
-
     }
 }

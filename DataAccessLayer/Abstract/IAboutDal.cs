@@ -2,7 +2,7 @@
 
 namespace DataAccessLayer.Abstract
 {
-    public interface IAboutDal:IRepository<About>
+    public interface IAboutDal : IRepository<About>
     {
     }
 }
