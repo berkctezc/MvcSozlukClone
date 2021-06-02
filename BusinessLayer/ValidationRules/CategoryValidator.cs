@@ -3,7 +3,7 @@ using FluentValidation;
 
 namespace BusinessLayer.ValidationRules
 {
-    public class CategoryValidator:AbstractValidator<Category>
+    public class CategoryValidator : AbstractValidator<Category>
     {
         public CategoryValidator()
         {

@@ -1,11 +1,11 @@
-﻿using System.Collections.Generic;
-using BusinessLayer.Abstract;
+﻿using BusinessLayer.Abstract;
 using DataAccessLayer.Abstract;
 using EntityLayer.Concrete;
+using System.Collections.Generic;
 
 namespace BusinessLayer.Concrete
 {
-   public class ContentManager: IContentService
+    public class ContentManager : IContentService
     {
         private IContentDal _contentDal;
 
@@ -21,7 +21,7 @@ namespace BusinessLayer.Concrete
 
         public List<Content> GetListByHeadingID(int id)
         {
-            return _contentDal.List(x=>x.HeadingID==id);
+            return _contentDal.List(x => x.HeadingID == id);
         }
 
         public void ContentAdd(Content content)
