@@ -13,7 +13,9 @@
     <link rel="stylesheet" href="~/AdminLTE-3.0.4/dist/css/adminlte.min.css">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
     <style>
-        .field-validation-error {color: rgb(255,0,0);}
+        .field-validation-error {
+            color: rgb(255,0,0);
+        }
     </style>
 </head>
 <body class="hold-transition sidebar-mini">
@@ -57,7 +59,7 @@
                                 <i class="nav-icon fas fa-copy"></i>
                                 <p>Yazarlar</p>
                             </a>
-                        </li>    
+                        </li>
                         <li class="nav-item has-treeview">
                             <a href="/Statistics/Index" class="nav-link">
                                 <i class="nav-icon fas fa-chart-bar"></i>
@@ -140,33 +142,24 @@
                         </li>
                     </ul>
                 </nav>
-                <!-- /.sidebar-menu -->
             </div>
-            <!-- /.sidebar -->
         </aside>
-        <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
-            <!-- Content Header (Page header) -->
             <div class="content-header">
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
                             <h1 class="m-0 text-dark">Sozluk Yonetici Paneli</h1>
-                        </div><!-- /.col -->
-                    </div><!-- /.row -->
-                </div><!-- /.container-fluid -->
+                        </div>
+                    </div>
+                </div>
             </div>
-            <!-- /.content-header -->
-            <!-- Main content -->
             <div class="content">
                 @RenderBody()
             </div>
-            <!-- /.content -->
         </div>
-        <!-- /.content-wrapper -->
     </div>
-    <!-- ./wrapper -->
-<script src="~/AdminLTE-3.0.4/plugins/jquery/jquery.min.js"></script>
+    <script src="~/AdminLTE-3.0.4/plugins/jquery/jquery.min.js"></script>
     <script src="~/AdminLTE-3.0.4/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="~/AdminLTE-3.0.4/dist/js/adminlte.js"></script>
     <script src="~/AdminLTE-3.0.4/plugins/chart.js/Chart.min.js"></script>

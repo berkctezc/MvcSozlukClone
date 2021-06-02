@@ -1,10 +1,28 @@
-﻿
+﻿@using EntityLayer.Concrete
+@model List<About>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Hakkımda Listesi</h2>
+<table class="table">
+    <tr>
+        <th>ID</th>
+        <th>Hakkımda Başlığı</th>
+        <th>Aktif Yap</th>
+        <th>Pasif Yap</th>
+    </tr>
+    @foreach(var i in Model){
+        <tr>
+            <td>@i.AboutID</td>
+            <td>Başlık</td>
+            <td><a href="#" class="btn btn warning">Aktif Yap</a></td>
+            <td><a href="#" class="btn btn danger">Pasif Yap</a></td>
+        </tr>
+    }
+</table>
+
 
 <button class="btn btn-primary" data-toggle="modal" data-target="#Modal">
     Yeni hakkımızda yazı girişi
@@ -16,19 +34,19 @@
             <div class="modal-header">
                 <h2 class="modal-title">Hakkımızda Metin Girişi</h2>
             </div>
-            <form method="post" action="#">
+            <form method="post" action="/About/AddAbout/">
                 <div class="modal-body">
                     <label>metin1</label>
-                    <input type="text" name="#" class="form-control" />
+                    <input type="text" name="AboutDetails1" class="form-control" />
                     <br />                  
                     <label>metin2</label>
-                    <input type="text" name="#" class="form-control" />
+                    <input type="text" name="AboutDetails2" class="form-control" />
                     <br />                   
                     <label>görsel1</label>
-                    <input type="text" name="#" class="form-control" />
+                    <input type="text" name="AboutImage1" class="form-control" />
                     <br />                    
                     <label>görsel2</label>
-                    <input type="text" name="#" class="form-control" />
+                    <input type="text" name="AboutImage2" class="form-control" />
                     <br />
                     <button class="btn btn-secondary">Kaydet</button>
                     </div>
