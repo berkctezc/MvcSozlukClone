@@ -65,6 +65,6 @@
 ## LINGUIST
 
 MvcProjeKampi/AdminLTE-3.0.4/** linguist-vendored
-**.html linguist-vendored
+*.html linguist-vendored
 MvcProjeKampi/Content/** linguist-vendored
 MvcProjeKampi/Scripts/** linguist-vendored
